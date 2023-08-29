@@ -28,8 +28,9 @@ public class Aula2 {
         //Irmaos
         arvore[5] = new PessoaPrivada("William", 48, arvore[3]);
         
-        System.out.println(arvore[4].getNome() + " => Mae" + arvore[4].getMae().getNome());
-        
+        //System.out.println(arvore[4].getNome() + " => Mae" + arvore[4].getMae().getNome());
+        System.out.println(arvore[3].nomeFilhos());
+                
     }
     
 }

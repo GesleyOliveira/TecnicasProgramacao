@@ -18,8 +18,10 @@ public class PessoaPrivada {
     private String nome;
     private int idade;
     private aula1.PessoaPrivada mae, pai;
-    private List<aula1.Pessoa> filhos = new ArrayList<>();
-    private List<aula1.Pessoa> irmaos = new ArrayList<>();
+    public List<aula1.PessoaPrivada> filhos = new ArrayList<>();
+    public List<aula1.PessoaPrivada> irmaos = new ArrayList<>();
+    
+    
     
     //construtor 
     //O que identifica o construtor, é que ele não tem retorno
@@ -30,9 +32,15 @@ public class PessoaPrivada {
        this(nome);
        this.idade=idade;
     }
-    public PessoaPrivada(String nome, int idade, PessoaPrivada mae){
+    public PessoaPrivada(String nome, int idade, PessoaPrivada M){
         this(nome, idade);
-        this.mae=mae;
+        this.mae=M;
+        M.addFilhos(this);
+        
+        for(int i=0;i<M.filhos.size();i++){
+            if (filhos.get(i) != this);
+                this.irmaos.add(M.filhos.get(i));
+                }
     }
     //****************
     //Setters
@@ -98,6 +106,10 @@ public class PessoaPrivada {
     
     public int qtdIrmaos(){
         return this.irmaos.size();
+    }
+    public void addFilhos(PessoaPrivada P){
+       filhos.add(P);
+       
     }
 }
 
