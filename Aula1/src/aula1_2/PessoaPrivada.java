@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aula1;
+package aula1_2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +17,9 @@ import java.util.List;
 public class PessoaPrivada {
     private String nome;
     private int idade;
-    private aula1.PessoaPrivada mae, pai;
-    public List<aula1.PessoaPrivada> filhos = new ArrayList<>();
-    public List<aula1.PessoaPrivada> irmaos = new ArrayList<>();
+    private aula1_2.PessoaPrivada mae, pai;
+    public List<aula1_2.PessoaPrivada> filhos = new ArrayList<>();
+    public List<aula1_2.PessoaPrivada> irmaos = new ArrayList<>();
     
     
     
@@ -32,15 +32,12 @@ public class PessoaPrivada {
        this(nome);
        this.idade=idade;
     }
-    public PessoaPrivada(String nome, int idade, PessoaPrivada M){
+    public PessoaPrivada(String nome, int idade, PessoaPrivada mae){
         this(nome, idade);
-        this.mae=M;
-        M.addFilhos(this);
+        this.mae=mae;
+        setMae(mae);
+        setIrmaos(mae);
         
-        for(int i=0;i<M.filhos.size();i++){
-            if (filhos.get(i) != this);
-                this.irmaos.add(M.filhos.get(i));
-                }
     }
     //****************
     //Setters
@@ -51,9 +48,7 @@ public class PessoaPrivada {
     public void setIdade(int idade){
         this.idade=idade;
     }
-    public void serMae(PessoaPrivada mae){
-        this.mae=mae;
-    }
+    
     public void setPai(PessoaPrivada pai){
         this.pai=pai;
     }
@@ -107,9 +102,30 @@ public class PessoaPrivada {
     public int qtdIrmaos(){
         return this.irmaos.size();
     }
-    public void addFilhos(PessoaPrivada P){
-       filhos.add(P);
+        
+    public void setIrmaos(PessoaPrivada mae){
+          this.mae = mae;
+          this.addIrmaos(mae.filhos);
+          
+      }
+    
+    public void setMae(PessoaPrivada mae){
+        this.mae = mae;
+        mae.addFilho(this);
+    }
+    
+     public void addFilho(PessoaPrivada filho){
+       filhos.add(filho);
        
     }
+        
+    public void addIrmaos(List<PessoaPrivada> irmaos){  
+        for(int i=0; i < irmaos.size();i++){
+            if(this != irmaos.get(i)){
+            this.irmaos.add(irmaos.get(i));
+            irmaos.get(i).irmaos.add(this);
+            }
+            } 
+      }
+   
 }
-
