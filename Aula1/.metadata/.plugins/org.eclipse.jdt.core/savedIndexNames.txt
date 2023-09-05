@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\Alunos\Documents\VS Code\TecnicasProgramacao\.metadata\.plugins\org.eclipse.jdt.core
+2850040928.index
+2060509845.index
+1865797976.index

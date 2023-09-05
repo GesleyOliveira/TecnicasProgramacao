@@ -39,7 +39,6 @@ public class Aula4 {
         arvore[13]=new Pessoas("Conde d'Eu");        
         //6º Geração
         arvore[14]=new Pessoas("Pedro de Alcantara", arvore[12], arvore[13], "01/01/1875");
-         
         // Imprime o resultado no console
         int i=0;
         System.out.println(arvore[i].nome +" tem "+ arvore[i].getQtdFilhos()+" filhos ("+ arvore[i].listaFilhos()+ ") e " 
