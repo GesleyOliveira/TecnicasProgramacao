@@ -8,7 +8,7 @@ import java.util.List;
 public class Funcionario extends Pessoa {
     int matricula;
     double salarioMes;
-    String superior, funcao;
+    String funcao;
     
     public Funcionario(String nome){
         super(nome);
