@@ -42,6 +42,19 @@ public class Calculadora {
     public double getResultadoValor(){
         return resultado;
     }
+    
+    public String convertDecToBin(int num){
+        String msg = "";
+        for (int i=0; i < 8; i++ ){
+            if (num < 2){
+              msg = num % 2 + msg; 
+              break;
+            }
+            msg = num % 2 + msg; 
+            num = num / 2;
+        } 
+        return msg;
+    }
 
     
 }
