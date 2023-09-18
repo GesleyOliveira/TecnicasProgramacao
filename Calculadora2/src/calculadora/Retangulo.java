@@ -8,10 +8,7 @@ enum FormasGeometricas{
 public class Retangulo {
     private double area, perimetro, lado1, lado2;
     public FormasGeometricas tipo;
-    
-    public void setLado(double lado){
-        this.lado1 = lado;
-    }
+    public String mensagem;
     
     public double getLado1(){
         return lado1;
@@ -29,14 +26,17 @@ public class Retangulo {
         return perimetro;
     }
     
-     public FormasGeometricas getTipo() {
+    public FormasGeometricas getTipo() {
         return tipo;
     }
     
+    
     public Retangulo(double lado){
         this.lado1 = lado;
-        this.lado2 = lado; 
-        this.tipo = FormasGeometricas.QUADRADO;       
+        this.lado2 = lado;
+        this.area = lado1 * lado2;
+        this.tipo = FormasGeometricas.QUADRADO; 
+        this.mensagem = " com lados: " + lado1 + " e " + lado2 + " tem área de: " + area;
     }
     
     public Retangulo(double lado1, double lado2){
@@ -44,14 +44,11 @@ public class Retangulo {
         this.lado2 = lado2;
         this.area = lado1 * lado2;
         this.tipo = FormasGeometricas.RETANGULO;
+        this.mensagem = " com lados: " + lado1 + " e " + lado2 + " tem área de: " + area;
     }
     
-    public String getQuadrado(){
-        return ("Quadrado com .... de lado, perímetro de .... e área de ....");
-    }
-    
-    public String getRetangulo(){
-        return ("Retangulo com .... por .... de lado, perímetro de .... e área de ....");
+    public String getMensagem(){
+        return mensagem;
     }
     
 }

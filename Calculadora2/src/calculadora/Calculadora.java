@@ -44,16 +44,16 @@ public class Calculadora {
     }
     
     public String convertDecToBin(int num){
-        String msg = "";
+        String numeroBin = "";
         for (int i=0; i < 8; i++ ){
             if (num < 2){
-              msg = num % 2 + msg; 
+              numeroBin = num % 2 + numeroBin; 
               break;
             }
-            msg = num % 2 + msg; 
+            numeroBin = num % 2 + numeroBin; 
             num = num / 2;
         } 
-        return msg;
+        return numeroBin;
     }
     
     public int convertBinToDec(int num){

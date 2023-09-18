@@ -10,7 +10,8 @@ enum TipoTriangulo{
 
 public class Triangulo {
     private double base, altura, angulo, segmentoAB, segmentoAC;
-    private TipoTriangulo tipo ;
+    private TipoTriangulo tipo;
+    private String mensagem;
     
     
     public Triangulo(double base, double altura){
@@ -18,6 +19,7 @@ public class Triangulo {
         this.altura = altura;
         this.angulo = 90;
         classificarTriangulo();
+        
     }
     
     public Triangulo(double segmentoAB, double segmentoAC, double angulo){
@@ -33,7 +35,7 @@ public class Triangulo {
         classificarTriangulo();
     }
     
-    private void classificarTriangulo(){
+    public void classificarTriangulo(){
         if (angulo == 90){
             tipo = TipoTriangulo.TRIANGULO_RETANGULO;
         } else if (angulo > 90) {
@@ -52,6 +54,10 @@ public class Triangulo {
         double senAngulo = Math.sin(Math.toRadians(angulo));
         return (0.5) * segmentoAB * segmentoAC * senAngulo;
     }
+    
+    /*public String getClassificarTriangulo(){
+        return classificarTriangulo;
+    }*/
     
     public String getDescricao() {
         String tipoDescricao = "";
