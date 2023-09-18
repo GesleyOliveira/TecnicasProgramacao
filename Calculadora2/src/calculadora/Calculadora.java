@@ -55,6 +55,21 @@ public class Calculadora {
         } 
         return msg;
     }
+    
+    public int convertBinToDec(int num){
+        int numeroDecimal = 0;
+        int base = 2;
+        int expoente = 0;
+        
+        while (num != 0){
+            int remainder = num % 10;
+            numeroDecimal += remainder * Math.pow(base, expoente);
+            num /= 10;
+            expoente++;
+        }
+        
+        return numeroDecimal;
+    }
 
     
 }
