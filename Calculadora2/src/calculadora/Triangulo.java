@@ -23,7 +23,7 @@ public class Triangulo {
     }
     
     public Triangulo(double segmentoAB, double segmentoAC, double angulo){
-        this.segmentoAB = segmentoAB;
+        this.segmentoAB = base + altura;
         this.segmentoAC = segmentoAC;
         
         if (angulo <= 0 || angulo > 90){
