@@ -9,7 +9,7 @@ enum TipoTriangulo{
 }
 
 public class Triangulo {
-    private double base, altura, angulo, segmentoAB, segmentoAC;
+    private double base, altura, angulo, segmentoAB, segmentoAC, x;
     private TipoTriangulo tipo;
     private String mensagem;
     
@@ -38,6 +38,7 @@ public class Triangulo {
     public void classificarTriangulo(){
         if (angulo == 90){
             tipo = TipoTriangulo.TRIANGULO_RETANGULO;
+            x = Math.sqrt(Math.pow(base, 2) + Math.pow(altura, 2));
         } else if (angulo > 90) {
             tipo = TipoTriangulo.TRIANGULO_OBTUSANGULO;
         } else {
