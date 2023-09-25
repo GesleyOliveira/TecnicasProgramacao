@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="AlocacaoMemoriaJava/src"/>
+	<classpathentry kind="src" path="Aula_5/src"/>
+	<classpathentry kind="src" path="Aula1/src"/>
+	<classpathentry kind="src" path="Aula4/src/aula4"/>
+	<classpathentry kind="src" path="Aula6 - Abstrato_Interface/src"/>
+	<classpathentry kind="src" path="Calculadora2/src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
