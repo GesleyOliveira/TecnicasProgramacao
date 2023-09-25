@@ -38,11 +38,6 @@ public class Triangulo {
     public void classificarTriangulo(){
         if (angulo == 90){
             tipo = TipoTriangulo.TRIANGULO_RETANGULO;
-            a2 + b2 = c2;
-            Math.pow(base,2) + Math.sqrt(altura,2) = Math.sqrt(c,2);
-            100 + 25 = c
-            Math.root(c,2)
-            segmentoAB = base + altura )
         } else if (angulo > 90) {
             tipo = TipoTriangulo.TRIANGULO_OBTUSANGULO;
         } else {
@@ -50,14 +45,14 @@ public class Triangulo {
         }
     } 
     
-    private double calcularPerimetro() {
+    public double calcularPerimetro() {
         double cosAngulo = Math.cos(Math.toRadians(angulo));
-        return segmentoAB + segmentoAC + 2 * Math.sqrt(segmentoAB * segmentoAC * (1-cosAngulo));
+        return base + altura + 2 * Math.sqrt(base * altura * (1-cosAngulo));
     }
     
-    private double calcularArea() {
+    public double calcularArea() {
         double senAngulo = Math.sin(Math.toRadians(angulo));
-        return (0.5) * segmentoAB * segmentoAC * senAngulo;
+        return (0.5) * base * altura * senAngulo;
     }
     
     /*public String getClassificarTriangulo(){
