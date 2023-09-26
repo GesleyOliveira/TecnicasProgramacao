@@ -1,7 +1,8 @@
 package Pessoa;
 
 public abstract class Pessoa {
-    protected String nome;
+    
+    private String nome;
     private String genero;
     private int idade;
     
@@ -19,13 +20,33 @@ public abstract class Pessoa {
         this.idade = idade;
     }
     
-    public abstract String getNome(); //Obrigatório a declaração no 'filho'
+    //   ***** Getter *****
     
-    public String getGenero(){
+    public String getNome(){
+        return nome;
+    } //Obrigatório a declaração no 'filho'
+    
+    public String getGenero() {
         return genero;
     }
     
-    public int getIdade(){
-        return idade;
+    public int getIdade() {
+        return idade; 
     }
+    
+    //   ***** Setter *****
+    
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+    
+    
 }

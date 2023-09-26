@@ -16,9 +16,25 @@ public final class Professor extends Funcionario{
     @Override
     public String getNome(){
         if (super.getGenero().equals("masculino")){
-            return "Professor " + super.nome;
-        }else{
-            return "Professora " + super.nome;
+            return "Professor " + super.getNome();
+        } else {
+            return "Professora " + super.getNome();
         }
+    }
+
+    public float getSalarioHora() {
+        return salarioHora;
+    }
+
+    public void setSalarioHora(float salarioHora) {
+        this.salarioHora = salarioHora;
+    }
+
+    public float getQtdHoras() {
+        return qtdHoras;
+    }
+
+    public void setQtdHoras(float qtdHoras) {
+        this.qtdHoras = qtdHoras;
     }
 }

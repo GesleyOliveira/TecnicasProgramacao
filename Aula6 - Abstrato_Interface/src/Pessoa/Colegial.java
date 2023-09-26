@@ -8,6 +8,10 @@ public final class Colegial extends Aluno {
         super(nome, genero, idade);
     }
     
+    public Colegial(String nome, String genero, float nota){
+        super(nome, genero, nota);
+    }
+    
     public void setNota(String nota){
         if(Integer.parseInt(nota) >= 0 && Integer.parseInt(nota) <= 10){
             super.nota = Float.parseFloat(nota);
@@ -15,4 +19,10 @@ public final class Colegial extends Aluno {
             super.nota = 0;
         }
     }
+    
+    public String exibirNotas(){
+        return String.valueOf(super.nota);
+    }
+    
+    
 }

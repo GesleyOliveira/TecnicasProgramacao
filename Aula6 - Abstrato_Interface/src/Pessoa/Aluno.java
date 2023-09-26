@@ -10,12 +10,23 @@ public abstract class Aluno extends Pessoa {
         super(nome, genero, idade);
     }
     
+    public Aluno(String nome, String genero, float nota){
+        super(nome, genero);
+        this.nota = nota;
+    }
+    
     @Override
     public String getNome(){
         if (super.getGenero().equals("masculino")){
-            return "Aluno " + super.nome;
+            return "Aluno " + super.getNome();
         } else {
-            return "Aluna " + super.nome;
+            return "Aluna " + super.getNome();
         }
     }
+
+    public float getNota() {
+        return nota;
+    }
+    
+    
 }

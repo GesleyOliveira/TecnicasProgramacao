@@ -13,9 +13,9 @@ public abstract class Funcionario extends Pessoa {
     @Override
     public String getNome(){
         if (super.getGenero().equals("masculino")){ 
-            return "Sr. " + super.nome;
+            return "Sr. " + super.getNome();
         } else {
-            return "Sra. " + super.nome; 
+            return "Sra. " + super.getNome(); 
         }
     }
     

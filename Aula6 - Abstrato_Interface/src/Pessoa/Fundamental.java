@@ -31,4 +31,15 @@ public final class Fundamental extends Aluno {
         }
     }
     
+    @Override
+    public float getNota() {
+        return nota;
+    }
+
+    public void setNota(float nota) {
+        this.nota = nota;
+    }
+    
+    
+    
 }
