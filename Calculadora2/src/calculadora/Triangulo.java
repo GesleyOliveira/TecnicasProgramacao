@@ -1,6 +1,5 @@
 package calculadora;
 
-import java.lang.Math;
 
 enum TipoTriangulo{
     TRIANGULO_RETANGULO,
@@ -9,7 +8,7 @@ enum TipoTriangulo{
 }
 
 public class Triangulo {
-    private double base, altura, angulo, segmentoAB, segmentoAC, x;
+    private double base, altura, angulo, segmentoAB, segmentoAC, x, perimetro;
     private TipoTriangulo tipo;
     private String mensagem;
     
@@ -41,14 +40,16 @@ public class Triangulo {
             x = Math.sqrt(Math.pow(base, 2) + Math.pow(altura, 2));
         } else if (angulo > 90) {
             tipo = TipoTriangulo.TRIANGULO_OBTUSANGULO;
+            x = Math.sqrt((Math.pow(base, 2) + Math.pow(altura, 2))-(2*base*altura*Math.cos(angulo)));
         } else {
             tipo = TipoTriangulo.TRIANGULO_ACUTANGULO;
+            x = Math.sqrt((Math.pow(base, 2) + Math.pow(altura, 2))-(2*base*altura*Math.cos(angulo)));
         }
     } 
     
     public double calcularPerimetro() {
-        double cosAngulo = Math.cos(Math.toRadians(angulo));
-        return base + altura + 2 * Math.sqrt(base * altura * (1-cosAngulo));
+        perimetro = base + altura + x;
+        return perimetro;
     }
     
     public double calcularArea() {
@@ -74,7 +75,7 @@ public class Triangulo {
                 break;
         }
         return tipoDescricao + " com base de " + base + ", altura de " + altura +
-            ", perímetro de " + calcularPerimetro() + " e área de " + calcularArea();
+            ", perímetro de " + String.format("%.2f", calcularPerimetro()) + " e área de " + calcularArea();
     }
        
 }
