@@ -8,8 +8,8 @@ public final class Colegial extends Aluno {
         super(nome, genero, idade);
     }
     
-    public Colegial(String nome, String genero, float nota){
-        super(nome, genero, nota);
+    public Colegial(String nome, String genero, int idade, float nota){
+        super(nome, genero, idade, nota);
     }
     
     public void setNota(String nota){

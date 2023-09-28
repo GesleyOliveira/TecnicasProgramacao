@@ -32,7 +32,7 @@ public class Principal {
         
         //Utilizando a classe Triangulo
         
-        Triangulo triangulo = new Triangulo(10, 10);
+        Triangulo triangulo = new Triangulo(10, 10, 90);
         triangulo.getDescricao();
         System.out.println("O " + triangulo.getDescricao());
            

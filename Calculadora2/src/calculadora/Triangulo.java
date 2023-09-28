@@ -26,7 +26,7 @@ public class Triangulo {
         this.segmentoAC = segmentoAC;
         
         if (angulo <= 0 || angulo > 90){
-            this.angulo = 90;
+            this.angulo = angulo;
         }
         else{
             this.angulo = angulo;
@@ -40,10 +40,16 @@ public class Triangulo {
             x = Math.sqrt(Math.pow(base, 2) + Math.pow(altura, 2));
         } else if (angulo > 90) {
             tipo = TipoTriangulo.TRIANGULO_OBTUSANGULO;
-            x = Math.sqrt((Math.pow(base, 2) + Math.pow(altura, 2))-(2*base*altura*Math.cos(angulo)));
+            angulo = 90;
+            x = Math.sqrt((Math.pow(segmentoAB, 2) + Math.pow(segmentoAC, 2))-(2*segmentoAB*segmentoAC*Math.cos(angulo)));
+            base = segmentoAB;
+            altura = segmentoAC;
         } else {
             tipo = TipoTriangulo.TRIANGULO_ACUTANGULO;
-            x = Math.sqrt((Math.pow(base, 2) + Math.pow(altura, 2))-(2*base*altura*Math.cos(angulo)));
+            angulo = 90;
+            x = Math.sqrt((Math.pow(segmentoAB, 2) + Math.pow(segmentoAC, 2))-(2*segmentoAB*segmentoAC*Math.cos(angulo)));
+            base = segmentoAB;
+            altura = segmentoAC;
         }
     } 
     
