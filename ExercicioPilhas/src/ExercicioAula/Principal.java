@@ -1,3 +1,5 @@
+package ExercicioAula;
+
 
 import ExercicioAula.PilhaString;
 import ExercicioAula.ExercicioPilha;
@@ -8,7 +10,7 @@ import java.lang.Math.*;
 public class Principal {
 
     public static void main(String[] args) {
-        
+                
         PilhaInteger p = new PilhaInteger();
         p.empilhar(1);
         p.empilhar(2);
