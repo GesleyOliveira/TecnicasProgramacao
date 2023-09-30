@@ -1,16 +1,23 @@
 package Algoritmos_recursivos;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import java.util.*;
 
-/**
- *
- * @author Alunos
- */
 public class TorreHanoi {
-    public double fatorial;
+    public int numero;
+    private List<Integer> origem, destino, auxiliar = new ArrayList<Integer>();
+    
+    
+    public TorreHanoi(int numero){
+                
+        if (numero == 1){
+            System.out.println("O disco sairá da origem para o destino");
+        } else {
+            for (int i=0; i<numero(); i++){
+            origem += i;   
+        }
+        }
+    }
+    
+    
     
 }
