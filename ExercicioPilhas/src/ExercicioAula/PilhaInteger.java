@@ -1,10 +1,9 @@
-
-
+package ExercicioAula;
 import java.util.*;
 
 public class PilhaInteger {
     
-    private List<Integer> pilha = new ArrayList<Integer>();
+    private List<Integer> pilha = new ArrayList<>();
     
     public void empilhar(Integer item){
         pilha.add(item);

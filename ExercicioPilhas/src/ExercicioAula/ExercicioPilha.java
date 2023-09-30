@@ -1,6 +1,6 @@
-
 package ExercicioAula;
 import java.util.*;
+
 
 public class ExercicioPilha {
     
@@ -60,4 +60,31 @@ public class ExercicioPilha {
        }
        
     }
+    
+    public static PilhaInteger ordenaPilhaInt(PilhaInteger pilhaEntrada){
+        
+        List<PilhaInteger> aux = new ArrayList<>();
+        aux.add(new PilhaInteger());
+        boolean empilhado = false;
+        PilhaInteger pilhaSaida = new PilhaInteger();
+        //int temp = 0;
+        
+        while(!pilhaEntrada.pilhaVazia()){
+            for(int indiceTemp = 0; indiceTemp < aux.size(); indiceTemp++){
+            
+            if(aux.get(indiceTemp).pilhaVazia()){
+               aux.get(indiceTemp).empilhar(pilhaEntrada.desempilhar());
+               empilhado = true;
+            } else if (pilhaEntrada.ExibirTopo() >= aux.get(indiceTemp).ExibirTopo()) {
+                aux.get(indiceTemp).empilhar(pilhaEntrada.desempilhar());
+                empilhado = true;
+            } else {
+                aux.get(indiceTemp);
+            }  
+            
+            }
+        }
+        return null;
+    }
+    
 }

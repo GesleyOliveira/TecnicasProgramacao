@@ -1,12 +1,10 @@
 
 import ExercicioAula.PilhaString;
 import ExercicioAula.ExercicioPilha;
+import ExercicioAula.PilhaInteger;
+import java.lang.Math.*;
 
 
-/**
- *
- * @author Alunos
- */
 public class Principal {
 
     public static void main(String[] args) {
@@ -33,6 +31,16 @@ public class Principal {
         
         System.out.println(ExercicioPilha.validaBalanceamento("{{[(())]}}"));
         
+        PilhaInteger pInteger = new PilhaInteger();
+        String resp = "Empilhado: ";
+        for(int i=0; i<10; i++){
+            pInteger.empilhar((int) Math.round(Math.random()*1000));
+            resp += pInteger.ExibirTopo() + " ";
+        }
+        
+        System.out.println(resp);
+        pInteger = ExercicioPilha.ordenaPilhaInt(pInteger);
+        System.out.println("Ordenado: " + ExercicioPilha.ordenaPilhaInt(pInteger));
     }
     
 }
