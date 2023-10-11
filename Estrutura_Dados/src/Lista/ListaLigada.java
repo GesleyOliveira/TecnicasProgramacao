@@ -5,6 +5,76 @@ public class ListaLigada {
     private No primeiroNo, ultimoNo;
     private int qtdNo;
     
+    public enum TipoOrdenacao {
+    CRESCENTE, DECRESCENTE;
+    }
+    
+    public void adicionar(int valor, TipoOrdenacao tipo){
+            No aux = primeiroNo;
+            if(primeiroNo==null){
+                adicionar((int) valor);
+            } else if (tipo == TipoOrdenacao.CRESCENTE){
+                for(int i=0; i<qtdNo;i++){
+                    if(valor <= (int)aux.getInfo()){
+                        adicionar(valor, i);
+                        break;
+                    } else {
+                        adicionar(valor);
+                        break;
+                    }
+                }
+            } else if (tipo == TipoOrdenacao.DECRESCENTE){
+                for(int i=0; i<qtdNo;i++){
+                    if(valor >= (int)aux.getInfo()){
+                        adicionar(valor, i);
+                        break;
+                    } else {
+                        adicionar(valor);
+                        break;
+                    }
+                }
+            }
+    }
+    
+    public int getLista2(Object item){
+        No aux = primeiroNo;
+        int indice = 0;
+        boolean encontrado = false;
+        for(int i=0; i<qtdNo;i++){
+            if((int)item == (int) aux.getInfo()){
+                indice = i;
+                encontrado = true;
+            }
+        aux = aux.getProximo();
+        }
+        if (encontrado == true){
+            return indice;
+        } else {
+            return -1;
+        }
+    }
+    
+    /*public boolean remover(Object item){
+        No aux;
+        if(item == ){
+            
+        } else {
+            return false;
+        }
+    }*/
+    
+    public void concatenar(ListaLigada lista){
+        No aux = lista.primeiroNo;
+        
+        for(int i=0; i< lista.qtdNo; i++){
+            adicionar(aux.getInfo());
+            aux = aux.getProximo();
+        }
+        lista.primeiroNo = null;
+        lista.ultimoNo = null;
+    }
+
+    
     public ListaLigada(){
         primeiroNo = null;
         ultimoNo = null;
@@ -38,7 +108,7 @@ public class ListaLigada {
                 //Adiciona o nó a ultima posição da lista;
                 adicionar(info);
             } else if(indice==0) {
-                /*Para adciomar o nó na primeira posição
+                /*Para adicionar o nó na primeira posição
                 O novo nó precisa precisa apontar para o primeiro nó e 
                     a referêncoia para o primeiro nó precisa ser atualizado 
                 */
@@ -106,4 +176,5 @@ public class ListaLigada {
             return null;
         }
     }
+    
 }
