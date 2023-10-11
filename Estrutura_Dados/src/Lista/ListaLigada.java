@@ -54,14 +54,14 @@ public class ListaLigada {
         }
     }
     
-    /*public boolean remover(Object item){
-        No aux;
-        if(item == ){
-            
+    public boolean remover2(Object item){
+        if(getLista2(item)!=-1){
+            remover(getLista2(item));
+            return true;
         } else {
             return false;
         }
-    }*/
+    }  
     
     public void concatenar(ListaLigada lista){
         No aux = lista.primeiroNo;
@@ -72,6 +72,15 @@ public class ListaLigada {
         }
         lista.primeiroNo = null;
         lista.ultimoNo = null;
+    }
+    
+    public ListaLigada Copiar(){
+        ListaLigada listaL = new ListaLigada();
+        
+        for(int i=0; i<qtdNo;i++){
+            listaL.adicionar(getLista(i));
+        }
+        return listaL;
     }
 
     
