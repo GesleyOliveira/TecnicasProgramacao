@@ -9,7 +9,7 @@ public class ListaDuplamenteLigada {
     CRESCENTE, DECRESCENTE;
     }
     
-    public void adicionar(int valor, TipoOrdenacao tipo){
+    public void adicionarOrdenado(int valor, TipoOrdenacao tipo){
             NoDuplo aux = primeiroNo;
             if(primeiroNo==null){
                 adicionar((int) valor);
