@@ -1,25 +1,13 @@
-/*package Algoritmos_recursivos;
-
-import java.util.*;
+package Algoritmos_recursivos;
 
 public class TorreHanoi {
-    public int numero;
-    private List<Integer> origem, destino, auxiliar = new ArrayList<Integer>();
-    
-    
-    public TorreHanoi(int numero){
-                
-        if (numero == 1){
-            System.out.println("O disco sairá da origem para o destino");
-        } else {
-            for (int i=0; i<numero(); i++){
-            origem += i;   
+    public void resolverTorreHanoi(int discos, String origem, String auxiliar, String destino) {
+        if (discos == 1) {
+            System.out.println("Mover Disco 1 de " + origem + " para " + destino);
+            return;
         }
-        }
+        resolverTorreHanoi(discos - 1, origem, destino, auxiliar);
+        System.out.println("Mover Disco " + discos + " de " + origem + " para " + destino);
+        resolverTorreHanoi(discos - 1, auxiliar, origem, destino);
     }
-    
-    
-    
 }
-
-*/
