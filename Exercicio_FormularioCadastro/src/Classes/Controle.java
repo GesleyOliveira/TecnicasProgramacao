@@ -1,10 +1,10 @@
-
 package Classes;
 
-
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.*;
 
-public class Controle {
+public class Controle implements Serializable {
     
     //Atributos
     
@@ -110,6 +110,10 @@ public class Controle {
             Colegial col=(Colegial)p;
             usuarioLogado=col;
             return col.login();
+        } else if(p.getClass().equals(Fundamental.class)){
+            Fundamental fun=(Fundamental)p;
+            usuarioLogado=fun;
+            return fun.login();
         }
         else{
             return "Usuario não possui acesso para Login!";
@@ -127,6 +131,10 @@ public class Controle {
             Colegial col=(Colegial)usuarioLogado;
             usuarioLogado=null;
             return col.logout();
+        } else if(usuarioLogado.getClass().equals(Fundamental.class)){
+            Fundamental fun=(Fundamental)usuarioLogado;
+            usuarioLogado=null;
+            return fun.logout();
         }
         else{
             return "Usuario não possui acesso para Logout!";
@@ -172,6 +180,17 @@ public class Controle {
         }
         return 0;
     }
+
+    public Object abrir(String endereco) throws IOException, ClassNotFoundException{
+        //throw new UnsupportedOperationException("Not supported yet.");
+        Object arquivo;        
+        arquivo=Serializador.ler(endereco);
+        return arquivo;
+    }
     
-    public 
+    public void salvar(String endereco) throws IOException{
+        Serializador.gravar(endereco, listaPessoas);
+    }
+    
+    
 }
