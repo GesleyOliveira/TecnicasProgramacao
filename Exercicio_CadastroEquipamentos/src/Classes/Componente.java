@@ -49,10 +49,19 @@ public class Componente  implements Serializable {
           ||  busca em profundidade em arvores para solucionar esse problema||
           ===================================================================*/
         Componente c;
+        Componente aux;
         for(int i=0;i<listaComponentes.size();i++){
             c=(Componente) listaComponentes.get(i);
-            if(c.id.equals(id))
+            if(c.id.equals(id)){
                 return c;
+            } else {
+                aux = c.buscaComponente(id);
+                if(aux != null){
+                    return aux;
+                }
+                
+            }
+                
         }
         return null;
     }
@@ -91,6 +100,22 @@ public class Componente  implements Serializable {
     }
     public void calcularCusto(){
         //Soma os custos de todos os componentes que compoem o Equipamento
+        float custoServicos = 0;
+        float custoComponetes = 0;
+        Servicos aux;
+        Componente comp;
         
-    }
+        for(int i=0;i<listaServicos.size();i++){
+            aux = (Servicos) listaServicos.get(i);
+            custoServicos += aux.getQtdHoras() * aux.getTIPO().getValor();
+            
+        }
+        for(int i=0;i<listaComponentes.size();i++){
+            comp = (Componente) listaComponentes.get(i);
+            comp.calcularCusto();
+            custoComponetes += comp.getCusto();
+            
+        }   
+    custo = custoServicos + custoComponetes;
+    } 
 }
